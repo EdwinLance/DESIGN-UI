@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard - Online Student Clearance System</title>
+<style>
+  body {
+    background-color: #f0f2f5;
+    font-family: "Courier New", monospace;
+    padding: 20px;
+  }
+
+  .dashboard {
+    border: 3px solid #333;
+    background-color: #fff;
+    box-shadow: 4px 4px 0px #999;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+
+  header h2 {
+    margin: 0;
+  }
+
+  header .actions button {
+    font-family: "Courier New", monospace;
+    margin-left: 5px;
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
+
+  header .actions button:hover {
+    background-color: #333;
+  }
+
+  .section {
+    margin-top: 20px;
+    border-top: 2px solid #000;
+    padding-top: 10px;
+  }
+
+  .section h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .search-bar {
+    margin-bottom: 10px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #000;
+    font-family: "Courier New", monospace;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+  }
+
+  th, td {
+    border: 1px solid #000;
+    padding: 6px 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #e5e7eb;
+  }
+
+  td.actions {
+    text-align: center;
+  }
+
+  .send-btn {
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+    font-family: "Courier New", monospace;
+    padding: 2px 8px;
+    cursor: pointer;
+  }
+
+  .send-btn:hover {
+    background-color: #333;
+  }
+
+  .status-approved {
+    color: #16a34a;
+  }
+
+  .status-declined {
+    color: #dc2626;
+  }
+
+  .status-pending {
+    color: #ca8a04;
+  }
+
+  .footer-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 6px 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Courier New", monospace;
+  }
+
+  .footer-btn:hover {
+    background-color: #333;
+  }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- HEADER -->
+  <header>
+    <h2>Student Dashboard</h2>
+    <div class="actions">
+      <button>Logout</button>
+      <button>Change Password</button>
+    </div>
+  </header>
+
+  <!-- FACULTY APPROVALS -->
+  <div class="section">
+    <h3>Faculty Approvals</h3>
+    <div class="search-bar">
+      <input type="text" placeholder="Search Faculty...">
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Faculty Name</th>
+          <th>Status</th>
+          <th>Send Request</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Clinic</td>
+          <td class="status-pending">Pending</td>
+          <td class="actions"><button class="send-btn">Send</button></td>
+        </tr>
+        <tr>
+          <td>Library</td>
+          <td class="status-approved">Approved (✔)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Accounting</td>
+          <td class="status-declined">Declined (❌)</td>
+          <td class="actions"><button class="send-btn">Send</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="footer-btn">Send Request to All Pending / Declined</button>
+  </div>
+
+  <!-- TEACHER APPROVALS -->
+  <div class="section">
+    <h3>Teacher Approvals</h3>
+    <div class="search-bar">
+      <input type="text" placeholder="Search Teachers...">
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Teacher Name</th>
+          <th>Status</th>
+          <th>Send Request</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Teacher 1</td>
+          <td class="status-approved">Approved (✔)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Teacher 2</td>
+          <td class="status-pending">Pending</td>
+          <td class="actions"><button class="send-btn">Send</button></td>
+        </tr>
+        <tr>
+          <td>Teacher 3</td>
+          <td class="status-declined">Declined (❌)</td>
+          <td class="actions"><button class="send-btn">Send</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="footer-btn">Download Approved List (PDF)</button>
+  </div>
+
+</div>
+
+</body>
+</html>
